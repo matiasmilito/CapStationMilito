@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import Logo from '../assets/cap.png';
 import {FaShoppingCart, FaUser, FaBars, FaTimes} from 'react-icons/fa';
+import {Link} from 'react-router-dom';
 
 
 const NavBar = () => {
@@ -12,20 +13,20 @@ const NavBar = () => {
   return (
     <div className='fixed w-full h-[80px] flex justify-between items-center px-4 bg-yellow-400 text-black'>
       <div className='flex items-center'>
-        <img src={Logo} alt="logo" style={{width: '55px'}}/>
-        <h1 className='text-2xl font-bold pl-4 text-black'>CapStation</h1>
+        <Link to='/'><img src={Logo} alt="logo" style={{width: '55px'}} className='transform hover:scale-125 transition duration-300'/></Link>
+        <h1 className='text-2xl font-bold pl-4 text-black'><Link to='/'>CapStation</Link></h1>
       </div>
 
       {/*Desktop Menu*/}
-      <ul className='hidden md:flex items-center'>
-        <li className='hover:text-[#253161] font-bold'>Home</li>
-        <li className='hover:text-[#253161]'>Gorras</li>
-        <li className='hover:text-[#253161]'>Beanies</li>
+      <ul className='hidden md:flex items-center pr-24'>
+        <li className='hover:text-[#683720] font-bold'><Link to='/'>Home</Link></li>
+        <li className='hover:text-[#683720]'><Link to='/gorras'>Gorras</Link></li>
+        <li className='hover:text-[#683720]'>Beanies</li>
       </ul>
 
       <ul className='hidden md:flex items-center'>
-        <li className='text-3xl hover:text-[#253161]'><FaShoppingCart /></li>
-        <li className='text-3xl hover:text-[#253161]'><FaUser /></li>
+        <li className='text-3xl hover:text-[#683720] hover:scale-110 transition duration-100'><FaShoppingCart /></li>
+        <li className='text-3xl hover:text-[#683720] hover:scale-110 transition duration-100'><FaUser /></li>
       </ul>
       
 
@@ -37,10 +38,10 @@ const NavBar = () => {
 
       {/* Mobile Menu*/}
       <ul className={!nav ? 'hidden' : 'absolute top-0 left-0 w-full h-screen bg-yellow-400 flex flex-col justify-center items-center'}>
-        <li className='py-6 text-4xl hover:text-[#253161]'>Home</li>
-        <li className='py-6 text-4xl hover:text-[#253161]'>Gorras</li>
-        <li className='py-6 text-4xl hover:text-[#253161]'><FaShoppingCart /></li>
-        <li className='py-6 text-4xl hover:text-[#253161]'><FaUser /></li>
+        <li className='py-6 text-4xl hover:text-[#683720]'>Home</li>
+        <li className='py-6 text-4xl hover:text-[#683720]'>Gorras</li>
+        <li className='py-6 text-4xl hover:text-[#683720]'><FaShoppingCart /></li>
+        <li className='py-6 text-4xl hover:text-[#683720]'><FaUser /></li>
       </ul>
 
       
