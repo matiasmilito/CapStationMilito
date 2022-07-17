@@ -5,7 +5,9 @@ import G2 from '../assets/gorra22.jpeg';
 import G3 from '../assets/gorra33.jpeg';
 import G4 from '../assets/gorra44.jpeg';
 import G5 from '../assets/gorra55.jpeg';
+import G6 from '../assets/gorra66.jpg';
 
+{/* product images 640px * 640px */}
 
 const Home = () => {
 
@@ -39,11 +41,17 @@ const Home = () => {
             title: "Rockaway",
             price: 2500,
             description: "Gorra de jean color azul, con hebilla ajustable super comoda de usar"
+        },
+        {
+            image: G6,
+            title: "Rockaway",
+            price: 2500,
+            description: "Gorra de jean color azul, con hebilla ajustable super comoda de usar"
         }
     ]
 
   return (
-    <div className='h-screen w-full pt-[80px]'>
+    <div className='h-full w-full pt-[80px]'>
         <div>
             <img src={Portada} alt="" srcset="" className='object-cover'/>
         </div>
@@ -52,10 +60,10 @@ const Home = () => {
                 <h1 className='text-2xl font-bold text-center '>NEW IN</h1>
             </div>
         </div>
-        <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-4 top-0 pl-8 pr-8 pb-8 ml-8 mr-8'>
+        <div className='grid sm:grid-cols-2 md:grid-cols-4 gap-4 top-0 pl-8 pr-8 pb-8 ml-8 mr-8'>
             {ingresos.map((P) => {
                 return (
-                    <div className='shadow-xl max-w-[300px] m-auto text-center mb-6 border rounded-xl'>
+                    <div className='hover:shadow-xl max-w-[300px] m-auto text-center mb-12 border rounded-xl'>
                         <img src={P.image} alt={P.title} className='border rounded-t-xl'/>
                         <h1 className='font-bold text-2xl p-1'>{P.title}</h1>
                         <p className='text-gray-700 text-2xl'>${P.price}</p>
