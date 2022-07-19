@@ -3,12 +3,16 @@ import { useState } from 'react';
 import Logo from '../assets/cap.png';
 import {FaShoppingCart, FaUser, FaBars, FaTimes} from 'react-icons/fa';
 import {Link} from 'react-router-dom';
+import CartWidget from './CartWidget';
 
 
 const NavBar = () => {
 
   const [nav, setNav] = useState(false)
   const handleClick = () => setNav(!nav)
+
+  // const [activePage, setActivePage] = useState(null)
+  
   
   return (
     <div className='fixed w-full h-[80px] flex justify-between items-center px-4 bg-yellow-400 text-black'>
@@ -25,7 +29,7 @@ const NavBar = () => {
       </ul>
 
       <ul className='hidden md:flex items-center'>
-        <li className='text-3xl hover:text-[#683720] hover:scale-110 transition duration-100'><FaShoppingCart /></li>
+        <li className='text-3xl hover:text-[#683720] hover:scale-110 transition duration-100'><CartWidget/></li>
         <li className='text-3xl hover:text-[#683720] hover:scale-110 transition duration-100'><FaUser /></li>
       </ul>
       
@@ -38,9 +42,10 @@ const NavBar = () => {
 
       {/* Mobile Menu*/}
       <ul className={!nav ? 'hidden' : 'absolute top-0 left-0 w-full h-screen bg-yellow-400 flex flex-col justify-center items-center'}>
-        <li className='py-6 text-4xl hover:text-[#683720]'>Home</li>
-        <li className='py-6 text-4xl hover:text-[#683720]'>Gorras</li>
-        <li className='py-6 text-4xl hover:text-[#683720]'><FaShoppingCart /></li>
+        <li className='py-6 text-4xl hover:text-[#683720]'><Link to='/'>Home</Link></li>
+        <li className='py-6 text-4xl hover:text-[#683720]'><Link to='/gorras'>Gorras</Link></li>
+        <li className='py-6 text-4xl hover:text-[#683720]'>Beanies</li>
+        <li className='py-6 text-4xl hover:text-[#683720]'><CartWidget /></li>
         <li className='py-6 text-4xl hover:text-[#683720]'><FaUser /></li>
       </ul>
 
