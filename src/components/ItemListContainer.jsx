@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import ItemList from './ItemList';
 import G1 from '../assets/gorra11.jpeg';
 import G2 from '../assets/gorra22.jpeg';
 import G3 from '../assets/gorra33.jpeg';
@@ -8,58 +9,65 @@ import G6 from '../assets/gorra66.jpg';
 
 const ItemListContainer = () => {
 
-    const ingresos = [
-        {
-            image: G1,
-            title: "Adidas",
-            price: 2500,
-            description: "Gorra de jean color azul, con hebilla ajustable super comoda de usar"
-        },
-        {
-            image: G2,
-            title: "TNF",
-            price: 2500,
-            description: "Gorra de jean color azul, con hebilla ajustable super comoda de usar"
-        },
-        {
-            image: G3,
-            title: "NYC",
-            price: 2500,
-            description: "Gorra de jean color azul, con hebilla ajustable super comoda de usar"
-        },
-        {
-            image: G4,
-            title: "Smile",
-            price: 2500,
-            description: "Gorra de jean color azul, con hebilla ajustable super comoda de usar"
-        },
-        {
-            image: G5,
-            title: "Rockaway",
-            price: 2500,
-            description: "Gorra de jean color azul, con hebilla ajustable super comoda de usar"
-        },
-        {
-            image: G6,
-            title: "Rockaway",
-            price: 2500,
-            description: "Gorra de jean color azul, con hebilla ajustable super comoda de usar"
-        }
-    ]
+    const [products, setProducts] = useState([])
+
+    useEffect(() => {
+        setProducts([
+            {   
+                id: 1,
+                image: G1,
+                title: "Adidas",
+                price: 2500,
+                description: "Gorra de jean color azul, con hebilla ajustable super comoda de usar",
+                stock: 15
+            },
+            {   
+                id: 2,
+                image: G2,
+                title: "TNF",
+                price: 2200,
+                description: "Gorra de jean color azul, con hebilla ajustable super comoda de usar",
+                stock: 20
+            },
+            {   
+                id: 3,
+                image: G3,
+                title: "NYC",
+                price: 3400,
+                description: "Gorra de jean color azul, con hebilla ajustable super comoda de usar",
+                stock: 12
+            },
+            {   
+                id: 4,
+                image: G4,
+                title: "Smile",
+                price: 3100,
+                description: "Gorra de jean color azul, con hebilla ajustable super comoda de usar",
+                stock: 3
+            },
+            {   
+                id: 5,
+                image: G5,
+                title: "Rockaway",
+                price: 2900,
+                description: "Gorra de jean color azul, con hebilla ajustable super comoda de usar",
+                stock: 3
+            },
+            {   
+                id: 6,
+                image: G6,
+                title: "Surf",
+                price: 2300,
+                description: "Gorra de jean color azul, con hebilla ajustable super comoda de usar",
+                stock: 5
+            }
+        ])
+    }, [])
+
 
     return (
-        <div className='grid sm:grid-cols-2 md:grid-cols-4 gap-4 top-0 pl-8 pr-8 pb-8 ml-8 mr-8'>
-            {ingresos.map((P) => {
-                    return (
-                        <div className='hover:shadow-xl max-w-[300px] m-auto text-center mb-12 border rounded-xl'>
-                            <img src={P.image} alt={P.title} className='border rounded-t-xl'/>
-                            <h1 className='font-bold text-2xl p-1'>{P.title}</h1>
-                            <p className='text-gray-700 text-2xl'>${P.price}</p>
-                            <p className='p-2'>{P.description}</p>
-                            <p><button className='p-[12px] text-black font-bold bg-yellow-400 border rounded-b-xl text-center cursor-pointer w-full text-2xl hover:opacity-70'>Agregar al Carrito</button></p>                   
-                        </div>
-                    )
-                })}
+        <div>
+            <ItemList products={products}/>
         </div>
   )
 }
