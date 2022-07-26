@@ -11,7 +11,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 const ItemListContainer = () => {
 
     const [products, setProducts] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         setTimeout(() =>{
@@ -65,9 +65,14 @@ const ItemListContainer = () => {
                     stock: 5
                 }
             ]);
-        }, 2000)
+            setLoading(true)
+        }, 2500)
         
     }, [])
+
+    if (!loading){
+        return <div className='flex items-center justify-center p-20'><ClipLoader /></div>
+    }
 
 
     return (
