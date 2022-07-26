@@ -13,6 +13,7 @@
     "react-floating-whatsapp": "^4.0.5",
     "react-icons": "^4.4.0",
     "react-router-dom": "^6.3.0",
+    "react-spinners": "^0.13.3",
     "sweetalert": "^2.1.2"
   },
   "devDependencies": {

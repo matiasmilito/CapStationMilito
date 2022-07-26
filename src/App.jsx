@@ -11,6 +11,8 @@ import {
 import Home from './components/Home';
 import Footer from './components/Footer';
 import Gorras from './components/Gorras';
+import Login from './components/Login';
+import Register from './components/Register';
 
 
 function App() {
@@ -21,6 +23,8 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/gorras' element={<Gorras />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/register' element={<Register />} />
           </Routes>
         <Footer/>
         <FloatingWhatsApp 

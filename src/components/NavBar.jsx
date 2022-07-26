@@ -30,7 +30,7 @@ const NavBar = () => {
 
       <ul className='hidden md:flex items-center'>
         <li className='text-3xl hover:text-[#683720] hover:scale-110 transition duration-100'><CartWidget/></li>
-        <li className='text-3xl hover:text-[#683720] hover:scale-110 transition duration-100'><FaUser /></li>
+        <li className='text-3xl hover:text-[#683720] hover:scale-110 transition duration-100'><Link to='/login'><FaUser /></Link></li>
       </ul>
       
 
@@ -46,7 +46,7 @@ const NavBar = () => {
         <li className='py-6 text-4xl hover:text-[#683720]'><Link to='/gorras'>Gorras</Link></li>
         <li className='py-6 text-4xl hover:text-[#683720]'>Beanies</li>
         <li className='py-6 text-4xl hover:text-[#683720]'><CartWidget /></li>
-        <li className='py-6 text-4xl hover:text-[#683720]'><FaUser /></li>
+        <li className='py-6 text-4xl hover:text-[#683720]'><Link to='/login'><FaUser /></Link></li>
       </ul>
 
       

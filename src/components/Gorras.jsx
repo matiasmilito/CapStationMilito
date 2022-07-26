@@ -1,8 +1,12 @@
 import React from 'react'
+import ItemListContainer from './ItemListContainer'
 
 const Gorras = () => {
   return (
-    <div className='h-screen w-full pt-[80px]'>Gorras</div>
+    <div className='w-full h-full pt-[90px]'>
+      <ItemListContainer />
+    </div>
+    
   )
 }
 
