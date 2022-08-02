@@ -24,8 +24,8 @@ const NavBar = () => {
       {/*Desktop Menu*/}
       <ul className='hidden md:flex items-center pr-24'>
         <li className='hover:text-[#683720] font-bold'><Link to='/'>Home</Link></li>
-        <li className='hover:text-[#683720]'><Link to='/gorras'>Gorras</Link></li>
-        <li className='hover:text-[#683720]'>Beanies</li>
+        <li className='hover:text-[#683720]'><Link to='/type/gorras'>Gorras</Link></li>
+        <li className='hover:text-[#683720]'><Link to='type/beanies'>Beanies</Link></li>
       </ul>
 
       <ul className='hidden md:flex items-center'>

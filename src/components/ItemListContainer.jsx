@@ -1,82 +1,48 @@
 import React, { useEffect, useState } from 'react';
 import ItemList from './ItemList';
-import G1 from '../assets/gorra11.jpeg';
-import G2 from '../assets/gorra22.jpeg';
-import G3 from '../assets/gorra33.jpeg';
-import G4 from '../assets/gorra44.jpeg';
-import G5 from '../assets/gorra55.jpeg';
-import G6 from '../assets/gorra66.jpg';
 import ClipLoader from "react-spinners/ClipLoader";
+import { useParams } from 'react-router-dom';
+import Products from '../data/products.json';
+
+
 
 const ItemListContainer = () => {
 
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
 
+    const {productType} = useParams();
+
     useEffect(() => {
-        setTimeout(() =>{
-            setProducts([
-                {   
-                    id: 1,
-                    image: G1,
-                    title: "Adidas",
-                    price: 2500,
-                    description: "Gorra de jean color azul, con hebilla ajustable super comoda de usar",
-                    stock: 15
-                },
-                {   
-                    id: 2,
-                    image: G2,
-                    title: "TNF",
-                    price: 2200,
-                    description: "Gorra de jean color azul, con hebilla ajustable super comoda de usar",
-                    stock: 20
-                },
-                {   
-                    id: 3,
-                    image: G3,
-                    title: "NYC",
-                    price: 3400,
-                    description: "Gorra de jean color azul, con hebilla ajustable super comoda de usar",
-                    stock: 12
-                },
-                {   
-                    id: 4,
-                    image: G4,
-                    title: "Smile",
-                    price: 3100,
-                    description: "Gorra de jean color azul, con hebilla ajustable super comoda de usar",
-                    stock: 3
-                },
-                {   
-                    id: 5,
-                    image: G5,
-                    title: "Rockaway",
-                    price: 2900,
-                    description: "Gorra de jean color azul, con hebilla ajustable super comoda de usar",
-                    stock: 3
-                },
-                {   
-                    id: 6,
-                    image: G6,
-                    title: "Surf",
-                    price: 2300,
-                    description: "Gorra de jean color azul, con hebilla ajustable super comoda de usar",
-                    stock: 5
-                }
-            ]);
-            setLoading(true)
-        }, 2500)
-        
+        setTimeout(() => {
+            setLoading(true);  
+        }, 2500);
     }, [])
+
+    useEffect(() => {
+        const promise = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if(!productType) resolve(Products)
+                else resolve(Products.filter(prod => prod.type.includes(productType)))
+            }, 2500);
+        })
+        promise
+        .then((response) => setProducts(response))
+        .catch((err) => console.log(err));
+    }, [productType])
+
 
     if (!loading){
         return <div className='flex items-center justify-center p-20'><ClipLoader /></div>
     }
 
+    // if (!productType){
+    //     return <h3 className='text-center text-4xl font-bold border-b-4 border-yellow-400 capitalize p-2 border-auto mb-6'>{productType}</h3>
+    // }
 
     return (
-        <div>
+        <div className='pt-[80px]'>
+            {/* <h3 className='text-center inline-flex text-4xl font-bold border-b-4 border-yellow-400 capitalize p-2 border-auto ml-2 mb-6'>{productType}</h3> */}
             <ItemList products={products}/>
         </div>
   )
