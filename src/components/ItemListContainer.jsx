@@ -16,7 +16,7 @@ const ItemListContainer = () => {
     useEffect(() => {
         setTimeout(() => {
             setLoading(true);  
-        }, 2500);
+        }, 1000);
     }, [])
 
     useEffect(() => {
@@ -24,7 +24,7 @@ const ItemListContainer = () => {
             setTimeout(() => {
                 if(!productType) resolve(Products)
                 else resolve(Products.filter(prod => prod.type.includes(productType)))
-            }, 2500);
+            }, 1000);
         })
         promise
         .then((response) => setProducts(response))
@@ -33,12 +33,8 @@ const ItemListContainer = () => {
 
 
     if (!loading){
-        return <div className='flex items-center justify-center p-20'><ClipLoader /></div>
+        return <div className='flex items-center justify-center p-20 h-screen'><ClipLoader /></div>
     }
-
-    // if (!productType){
-    //     return <h3 className='text-center text-4xl font-bold border-b-4 border-yellow-400 capitalize p-2 border-auto mb-6'>{productType}</h3>
-    // }
 
     return (
         <div className='pt-[20px]'>

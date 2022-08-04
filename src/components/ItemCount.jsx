@@ -38,7 +38,7 @@ const ItemCount = ({stock}) => {
                 <div className='text-2xl font-bold' >{count}</div>
                 <div className='pl-4 text-2xl' onClick={handleClickMas}><BsCartPlus/></div>
             </div>
-            <button className='p-[12px] text-black font-bold bg-yellow-400 border rounded-b-xl text-center cursor-pointer w-full text-2xl hover:opacity-70' onClick={onAdd}>Agregar al Carrito</button>
+            <button className='p-[12px] text-black font-bold bg-yellow-400 rounded-b-xl text-center cursor-pointer w-full text-2xl hover:opacity-70' onClick={onAdd}>Agregar al Carrito</button>
 
         {/* // <div className='flex'>
         //     <button onClick={handleClickMas}>+</button>
