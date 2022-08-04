@@ -7,7 +7,7 @@ import ItemListContainer from './ItemListContainer';
 const Home = () => {
 
   return (
-    <div className='h-full w-full pt-[80px]'>
+    <div className='h-full w-full'>
         <div>
             <img src={Portada} alt="" srcset="" className='object-cover'/>
         </div>

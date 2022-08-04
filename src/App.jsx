@@ -22,6 +22,7 @@ function App() {
     <Router>
       <div>
         <NavBar />
+        <div className='h-[80px]'></div>
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/gorras' element={<Gorras />} />
