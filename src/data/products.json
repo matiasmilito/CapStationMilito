@@ -19,7 +19,7 @@
     },
     {   
         "id": 3,
-        "type": "beanies",
+        "type": "gorras",
         "image": "../../src/assets/gorra33.jpeg",
         "title": "NYC",
         "price": 3400,
@@ -37,7 +37,7 @@
     },
     {   
         "id": 5,
-        "type": "beanies",
+        "type": "gorras",
         "image": "../../src/assets/gorra55.jpeg",
         "title": "Rockaway",
         "price": 2900,
@@ -52,5 +52,32 @@
         "price": 2300,
         "description": "Gorra de jean color azul, con hebilla ajustable super comoda de usar",
         "stock": 5
+    },
+    {   
+        "id": 7,
+        "type": "beanies",
+        "image": "../../src/assets/beanie3.jpg",
+        "title": "Rockaway",
+        "price": 2900,
+        "description": "Gorra de jean color azul, con hebilla ajustable super comoda de usar",
+        "stock": 3
+    },
+    {   
+        "id": 8,
+        "type": "beanies",
+        "image": "../../src/assets/beanie2.jpg",
+        "title": "Rockaway",
+        "price": 2900,
+        "description": "Gorra de jean color azul, con hebilla ajustable super comoda de usar",
+        "stock": 3
+    },
+    {   
+        "id": 9,
+        "type": "beanies",
+        "image": "../../src/assets/beanie1.jpg",
+        "title": "Rockaway",
+        "price": 2900,
+        "description": "Gorra de jean color azul, con hebilla ajustable super comoda de usar",
+        "stock": 3
     }
 ]

@@ -15,6 +15,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
+import Cart from './components/Cart';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
             <Route path='/product/:productId' element={<ItemDetailContainer />} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
+            <Route path='/cart' element={<Cart />} />
           </Routes>
         <Footer/>
         <FloatingWhatsApp 
