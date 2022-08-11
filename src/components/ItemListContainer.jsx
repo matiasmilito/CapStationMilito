@@ -38,7 +38,6 @@ const ItemListContainer = () => {
 
     return (
         <div className='pt-[20px]'>
-            {/* <h3 className='text-center inline-flex text-4xl font-bold border-b-4 border-yellow-400 capitalize p-2 border-auto ml-2 mb-6'>{productType}</h3> */}
             <ItemList products={products}/>
         </div>
   )

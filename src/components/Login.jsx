@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {Link} from 'react-router-dom';
 
 const Login = () => {
+
+    const [username, setUsername] = useState()
+    const [password, setPassword] = useState()
+
   return (
     <div className='w-full h-screen bg-yellow-400 flex items-center justify-center'>
         <form className='w-auto h-auto bg-yellow-400 rounded-2xl flex flex-col items-center p-4 '>

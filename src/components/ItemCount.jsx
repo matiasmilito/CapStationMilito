@@ -27,7 +27,7 @@ const ItemCount = ({stock, onAdd}) => {
 
     return (
         <div>
-            <div className='flex items-center justify-center pb-2'>
+            <div className='flex items-center justify-center pb-4'>
                 <div className='pr-4 text-2xl' onClick={handleClickMenos}><BsCartDash/></div>
                 <div className='text-2xl font-bold' >{count}</div>
                 <div className='pl-4 text-2xl' onClick={handleClickMas}><BsCartPlus/></div>

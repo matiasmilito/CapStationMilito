@@ -23,9 +23,9 @@ const NavBar = () => {
 
       {/*Desktop Menu*/}
       <ul className='hidden md:flex items-center pr-24'>
-        <li className='hover:text-[#683720] font-bold'><Link to='/'>Home</Link></li>
-        <li className='hover:text-[#683720]'><Link to='/type/gorras'>Gorras</Link></li>
-        <li className='hover:text-[#683720]'><Link to='/type/beanies'>Beanies</Link></li>
+        <li className='hover:text-[#683720] active:font-bold'><Link to='/'>Home</Link></li>
+        <li className='hover:text-[#683720] active:font-bold'><Link to='/type/gorras'>Gorras</Link></li>
+        <li className='hover:text-[#683720] active:font-bold'><Link to='/type/beanies'>Beanies</Link></li>
       </ul>
 
       <ul className='hidden md:flex items-center'>
@@ -42,11 +42,11 @@ const NavBar = () => {
 
       {/* Mobile Menu*/}
       <ul className={!nav ? 'hidden' : 'absolute top-0 left-0 w-full h-screen bg-yellow-400 flex flex-col justify-center items-center'}>
-        <li className='py-6 text-4xl hover:text-[#683720]'><Link to='/'>Home</Link></li>
-        <li className='py-6 text-4xl hover:text-[#683720]'><Link to='/type/gorras'>Gorras</Link></li>
-        <li className='py-6 text-4xl hover:text-[#683720]'><Link to='/type/beanies'>Beanies</Link></li>
+        <li className='py-6 text-4xl hover:text-[#683720]'><Link to='/' onClick={handleClick}>Home</Link></li>
+        <li className='py-6 text-4xl hover:text-[#683720]'><Link to='/type/gorras' onClick={handleClick}>Gorras</Link></li>
+        <li className='py-6 text-4xl hover:text-[#683720]'><Link to='/type/beanies' onClick={handleClick}>Beanies</Link></li>
         <li className='py-6 text-4xl hover:text-[#683720]'><CartWidget /></li>
-        <li className='py-6 text-4xl hover:text-[#683720]'><Link to='/login'><FaUser /></Link></li>
+        <li className='py-6 text-4xl hover:text-[#683720]'><Link to='/login' onClick={handleClick}><FaUser /></Link></li>
       </ul>
 
       
