@@ -6,11 +6,11 @@ const ItemCart = ({product}) => {
     const {removeItem} = useCartContext();
 
   return (
-    <div className='flex border-b-2'>
+    <div className='flex border-b-2 p-2'>
         <div className='w-[25vw]'>
-            <img src={product.image} alt={product.title} className='w-[20vw] rounded-xl shadow-lg m-2'/>
+            <img src={product.image} alt={product.title} className='w-[20vw] rounded-xl shadow-lg m-auto'/>
         </div>
-        <div className='flex items-center'>
+        <div className='flex items-center lg:text-4xl'>
             <p className='p-2 font-bold w-[20vw] text-center'>{product.title}</p>
             <p className='p-2 w-[5vw] text-center'>{product.quantity}</p>
             <p className='p-2 w-[15vw] text-center'>${product.price}</p>

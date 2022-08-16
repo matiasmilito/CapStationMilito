@@ -45,7 +45,7 @@ const NavBar = () => {
         <li className='py-6 text-4xl hover:text-[#683720]'><Link to='/' onClick={handleClick}>Home</Link></li>
         <li className='py-6 text-4xl hover:text-[#683720]'><Link to='/type/gorras' onClick={handleClick}>Gorras</Link></li>
         <li className='py-6 text-4xl hover:text-[#683720]'><Link to='/type/beanies' onClick={handleClick}>Beanies</Link></li>
-        <li className='py-6 text-4xl hover:text-[#683720]'><CartWidget /></li>
+        <li className='py-6 text-4xl hover:text-[#683720]'><Link to='/cart' onClick={handleClick}><CartWidget /></Link></li>
         <li className='py-6 text-4xl hover:text-[#683720]'><Link to='/login' onClick={handleClick}><FaUser /></Link></li>
       </ul>
 
