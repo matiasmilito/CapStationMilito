@@ -3,6 +3,8 @@ import ItemList from './ItemList';
 import ClipLoader from "react-spinners/ClipLoader";
 import { useParams } from 'react-router-dom';
 import Products from '../data/products.json';
+import {getFirestore, collection, getDocs, query, where} from 'firebase/firestore';
+import G5 from '../assets/gorra55.jpeg'
 
 
 
@@ -20,15 +22,16 @@ const ItemListContainer = () => {
     }, [])
 
     useEffect(() => {
-        const promise = new Promise((resolve, reject) => {
-            setTimeout(() => {
-                if(!productType) resolve(Products)
-                else resolve(Products.filter(prod => prod.type.includes(productType)))
-            }, 1000);
-        })
-        promise
-        .then((response) => setProducts(response))
-        .catch((err) => console.log(err));
+        const querydb = getFirestore();
+        const queryCollection = collection(querydb, 'products');
+        if (productType) {
+            const queryFilter = query(queryCollection, where('categoryId', '==', productType))
+            getDocs(queryFilter)
+            .then(res => setProducts(res.docs.map(product => ({id: product.id, ...product.data()}))))
+        } else {
+            getDocs(queryCollection)
+            .then(res => setProducts(res.docs.map(product => ({id: product.id, ...product.data()}))))
+        }
     }, [productType])
 
 

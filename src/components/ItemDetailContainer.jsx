@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ItemDetail from './ItemDetail';
 import { useParams } from 'react-router-dom';
 import Productos from '../data/products.json';
-
+import {getFirestore, doc, getDoc} from 'firebase/firestore';
 
 const ItemDetailContainer = () => {
 
@@ -11,13 +11,11 @@ const ItemDetailContainer = () => {
   
 
   useEffect(() => {
-    const getItem = new Promise(resolve => {
-      setTimeout(() => {
-        resolve(Productos);
-      }, 500);
-    });
-    getItem.then(res => setProducto(res.find(productoD => productoD.id === parseInt(productId))));
-  }, [])
+    const querydb = getFirestore();
+    const queryDoc = doc(querydb, 'products', productId);
+    getDoc(queryDoc)
+      .then(res => setProducto({id: res.id, ...res.data()}))
+  }, [productId])
 
   return (
     <ItemDetail producto={producto} />
