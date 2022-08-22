@@ -3,8 +3,11 @@ import { useCartContext } from '../context/CartContext'
 import ItemCart from './ItemCart';
 import { Link } from 'react-router-dom';
 
+
 const Cart = () => {
   const {cart, totalPrice} = useCartContext();
+
+  
 
 
   if (cart.length === 0){
@@ -21,16 +24,16 @@ const Cart = () => {
 
   return (
     <div className='h-screen w-full'>
-      {/* <div className='flex pt-2 font-bold border-b-2'>
-        <p className='w-[40vw] text-center'>Producto</p>
-        <p className='w-[12vw] text-center'>Cant</p>
-        <p className='w-[15vw] text-center'>Precio</p>
-        <p className='w-[15vw] text-center'>Subtotal</p>
-      </div> */}
       {
         cart.map(product => <ItemCart key={product.id} product={product}/>)
       }
       <p className='flex justify-end font-bold p-4 pr-6'>Total: ${totalPrice()}</p>
+      <div className='flex items-center justify-center'>
+        <Link to='/checkout'>
+          <button className='p-[12px] text-black font-bold bg-yellow-400 rounded-xl text-center cursor-pointer w-auto text-2xl hover:bg-yellow-300'>Terminar mi compra</button>
+        </Link> 
+      </div>
+           
     </div>
   )
 }
