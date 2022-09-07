@@ -25,12 +25,12 @@ const Cart = () => {
   }
 
   return (
-    <div className='h-screen w-full'>
+    <div className='min-h-screen w-full pt-[90px]'>
       {
         cart.map(product => <ItemCart key={product.id} product={product}/>)
       }
       <p className='flex justify-end font-bold p-4 pr-6'>Total: ${totalPrice()}</p>
-      <div className='flex items-center justify-center'>
+      <div className='flex items-center justify-center pb-2'>
         {
           user 
           ? 

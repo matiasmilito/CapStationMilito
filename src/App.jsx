@@ -21,6 +21,7 @@ import Checkout from './components/Checkout';
 import { AuthContextProvider } from './context/AuthContext';
 import Profile from './components/Profile';
 import ProtectedRoutes from './components/ProtectedRoutes';
+import AdminPage from './components/AdminPage';
 
 
 
@@ -31,7 +32,6 @@ function App() {
           <AuthContextProvider>
             <CartProvider>
             <NavBar />
-            <div className='h-[80px]'></div>
               <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/gorras' element={<Gorras />} />
@@ -42,6 +42,7 @@ function App() {
                 <Route path='/cart' element={<Cart />} />
                 <Route path='/checkout' element={<ProtectedRoutes><Checkout /></ProtectedRoutes>} />
                 <Route path='/profile' element={<ProtectedRoutes><Profile /></ProtectedRoutes>} />
+                <Route path='/adminpage' element={<AdminPage />} />
               </Routes>
             <Footer/>
             <FloatingWhatsApp 

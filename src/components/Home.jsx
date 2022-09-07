@@ -17,7 +17,7 @@ const Home = () => {
                 <h1 className='text-2xl font-bold text-center'>NEW IN</h1>
             </div>
         </div>
-        <ItemListContainer />
+          <ItemListContainer />
     </div>
   )
 }

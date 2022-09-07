@@ -38,9 +38,11 @@ const ItemListContainer = () => {
     if (!loading){
         return <div className='flex items-center justify-center p-20 h-screen'><ClipLoader /></div>
     }
+    
 
     return (
-        <div className='pt-[20px]'>
+        <div className='min-h-screen'>
+            {productType? <div className='pt-[90px]'></div> : <div></div>}
             <ItemList products={products}/>
         </div>
   )

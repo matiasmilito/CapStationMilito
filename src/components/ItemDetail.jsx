@@ -21,7 +21,7 @@ const ItemDetail = ({producto, count}) => {
 
 
   return (
-    <div className='w-full h-screen bg-white flex items-center justify-center'>
+    <div className='w-full h-screen pt-[40px] bg-white flex items-center justify-center'>
       <div className='max-w-[1000px] w-full grid sm:grid-cols-2 gap-8 m-4'>
         <div className='m-auto pt-4'>
             <img src={producto.image} alt="itemdetail" className='h-[300px] rounded-xl shadow-lg'/>

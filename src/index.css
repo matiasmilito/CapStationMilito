@@ -14,3 +14,7 @@
         @apply cursor-pointer
     }
 }
+
+.padding {
+    padding-top: 20px !important;
+}

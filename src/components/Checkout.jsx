@@ -4,13 +4,15 @@ import { useState } from 'react';
 import swal from 'sweetalert';
 import { useNavigate } from 'react-router-dom';
 import { useCartContext } from '../context/CartContext';
+import { UserAuth } from '../context/AuthContext';
 
 const Checkout = () => {
 
     const {cart, clear, totalPrice} = useCartContext();
+    const {user} = UserAuth()
 
     const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
+    const [email, setEmail] = useState(user.email)
     const [phone, setPhone] = useState()
     const [address, setAddress] = useState('')
 
@@ -40,11 +42,11 @@ const Checkout = () => {
           })
     )
     .then(clear)
-    navigate('/')
+    navigate('/profile')
   }
 
   return (
-    <div className='w-full h-screen'>
+    <div className='w-full h-screen pt-[80px]'>
         <p className='text-center p-4 font-bold'>
             Complete los campos!
         </p>
@@ -53,7 +55,9 @@ const Checkout = () => {
                 <input type="text" className='border p-2 rounded-2xl' placeholder='Nombre' value={name} onChange={(e) => setName(e.target.value)}/>
             </div>
             <div className='p-2'>
-                <input type="text" className='border p-2 rounded-2xl' placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)}/>
+                <select className='border p-2 rounded-2xl' placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)}>
+                    <option selected defaultValue={user.uid}>{user.email}</option>
+                </select>
             </div>
             <div  className='p-2'>
                 <input type="number" className='border p-2 rounded-2xl' placeholder='Telefono' value={phone} onChange={(e) => setPhone(e.target.value)}/>
