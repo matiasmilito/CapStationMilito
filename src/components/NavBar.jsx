@@ -4,9 +4,12 @@ import Logo from '../assets/cap.png';
 import {FaShoppingCart, FaUser, FaBars, FaTimes} from 'react-icons/fa';
 import {Link} from 'react-router-dom';
 import CartWidget from './CartWidget';
+import { UserAuth } from '../context/AuthContext';
 
 
 const NavBar = () => {
+
+  const {user} = UserAuth()
 
   const [nav, setNav] = useState(false)
   const handleClick = () => setNav(!nav)
@@ -30,7 +33,7 @@ const NavBar = () => {
 
       <ul className='hidden md:flex items-center'>
         <li className='text-3xl hover:text-[#683720] hover:scale-110 transition duration-100'><CartWidget/></li>
-        <li className='text-3xl hover:text-[#683720] hover:scale-110 transition duration-100'><Link to='/login'><FaUser /></Link></li>
+        <li className='text-3xl hover:text-[#683720] hover:scale-110 transition duration-100'><Link to={user ? '/profile' : '/login'}><FaUser /></Link></li>
       </ul>
       
 
@@ -46,11 +49,8 @@ const NavBar = () => {
         <li className='py-6 text-4xl hover:text-[#683720]'><Link to='/type/gorras' onClick={handleClick}>Gorras</Link></li>
         <li className='py-6 text-4xl hover:text-[#683720]'><Link to='/type/beanies' onClick={handleClick}>Beanies</Link></li>
         <li className='py-6 text-4xl hover:text-[#683720]'><Link to='/cart' onClick={handleClick}><CartWidget /></Link></li>
-        <li className='py-6 text-4xl hover:text-[#683720]'><Link to='/login' onClick={handleClick}><FaUser /></Link></li>
+        <li className='py-6 text-4xl hover:text-[#683720]'><Link to={user ? '/profile' : '/login'} onClick={handleClick}><FaUser /></Link></li>
       </ul>
-
-      
-
     </div>
   )
 }

@@ -4,7 +4,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 import { useParams } from 'react-router-dom';
 import Products from '../data/products.json';
 import {getFirestore, collection, getDocs, query, where} from 'firebase/firestore';
-import G5 from '../assets/gorra55.jpeg'
+
 
 
 

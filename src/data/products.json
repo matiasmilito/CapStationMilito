@@ -1,59 +1,5 @@
 [
     {   
-        "id": 1,
-        "type": "gorras",
-        "image": "../../src/assets/gorra11.jpeg",
-        "title": "Adidas",
-        "price": 2500,
-        "description": "Gorra de jean color azul, con hebilla ajustable super comoda de usar",
-        "stock": 15
-    },
-    {   
-        "id": 2,
-        "type": "gorras",
-        "image": "../../src/assets/gorra22.jpeg",
-        "title": "TNF",
-        "price": 2200,
-        "description": "Gorra de jean color azul, con hebilla ajustable super comoda de usar",
-        "stock": 20
-    },
-    {   
-        "id": 3,
-        "type": "gorras",
-        "image": "../../src/assets/gorra33.jpeg",
-        "title": "NYC",
-        "price": 3400,
-        "description": "Gorra de jean color azul, con hebilla ajustable super comoda de usar",
-        "stock": 12
-    },
-    {   
-        "id": 4,
-        "type": "gorras",
-        "image": "../../src/assets/gorra44.jpeg",
-        "title": "Smile",
-        "price": 3100,
-        "description": "Gorra de jean color azul, con hebilla ajustable super comoda de usar",
-        "stock": 3
-    },
-    {   
-        "id": 5,
-        "type": "gorras",
-        "image": "../../src/assets/gorra55.jpeg",
-        "title": "Rockaway",
-        "price": 2900,
-        "description": "Gorra de jean color azul, con hebilla ajustable super comoda de usar",
-        "stock": 3
-    },
-    {   
-        "id": 6,
-        "type": "gorras",
-        "image": "../../src/assets/gorra66.jpg",
-        "title": "Surf",
-        "price": 2300,
-        "description": "Gorra de jean color azul, con hebilla ajustable super comoda de usar",
-        "stock": 5
-    },
-    {   
         "id": 7,
         "type": "beanies",
         "image": "../../src/assets/beanie3.jpg",

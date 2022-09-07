@@ -18,6 +18,9 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 import Cart from './components/Cart';
 import CartProvider from './context/CartContext';
 import Checkout from './components/Checkout';
+import { AuthContextProvider } from './context/AuthContext';
+import Profile from './components/Profile';
+import ProtectedRoutes from './components/ProtectedRoutes';
 
 
 
@@ -25,28 +28,31 @@ function App() {
   return (
     <Router>
         <div>
-          <CartProvider>
-          <NavBar />
-          <div className='h-[80px]'></div>
-            <Routes>
-              <Route path='/' element={<Home />} />
-              <Route path='/gorras' element={<Gorras />} />
-              <Route path='/type/:productType' element={<ItemListContainer />} />
-              <Route path='/product/:productId' element={<ItemDetailContainer />} />
-              <Route path='/login' element={<Login />} />
-              <Route path='/register' element={<Register />} />
-              <Route path='/cart' element={<Cart />} />
-              <Route path='/checkout' element={<Checkout />} />
-            </Routes>
-          <Footer/>
-          <FloatingWhatsApp 
-            phoneNumber='543412553267'
-            accountName='CapStation'
-            allowClickAway
-            avatar={LogoW}
-            defaultMessage={'Hola! Estoy interesado en unas de sus gorras!'}
-          />
-          </CartProvider>
+          <AuthContextProvider>
+            <CartProvider>
+            <NavBar />
+            <div className='h-[80px]'></div>
+              <Routes>
+                <Route path='/' element={<Home />} />
+                <Route path='/gorras' element={<Gorras />} />
+                <Route path='/type/:productType' element={<ItemListContainer />} />
+                <Route path='/product/:productId' element={<ItemDetailContainer />} />
+                <Route path='/login' element={<Login />} />
+                <Route path='/register' element={<Register />} />
+                <Route path='/cart' element={<Cart />} />
+                <Route path='/checkout' element={<ProtectedRoutes><Checkout /></ProtectedRoutes>} />
+                <Route path='/profile' element={<ProtectedRoutes><Profile /></ProtectedRoutes>} />
+              </Routes>
+            <Footer/>
+            <FloatingWhatsApp 
+              phoneNumber='543412553267'
+              accountName='CapStation'
+              allowClickAway
+              avatar={LogoW}
+              defaultMessage={'Hola! Estoy interesado en unas de sus gorras!'}
+            />
+            </CartProvider>
+          </AuthContextProvider>
         </div>
     </Router>
   )
